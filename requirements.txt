@@ -1,0 +1,6 @@
+flask
+pandas
+openpyxl
+langchain
+langchain-groq
+python-dotenv

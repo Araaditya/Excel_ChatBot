@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Excel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Excel File</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="excel_file" required>
+            <button type="submit">Upload</button>
+        </form>
+        <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class="flash">{{ messages[0] }}</ul>
+          {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

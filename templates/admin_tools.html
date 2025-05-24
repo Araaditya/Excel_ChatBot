@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Tools</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Admin Tools</h2>
+        <p>Schema of 'uploaded_data':</p>
+        <ul>
+            {% for col in schema %}
+                <li>{{ col }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    </div>
+</body>
+</html>
