@@ -1,5 +1,4 @@
-# flasl_excel
-
+# Excel_ChatBot
 A Flask app that converts natural language queries into SQL using LangChain and LLaMA (Groq) for querying uploaded Excel files.
 
 ## Features
