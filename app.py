@@ -9,7 +9,7 @@ from db import get_connection, get_schema, load_excel_to_sqlite
 from auth import auth_blueprint
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.secret_key = 'API_KEY'
 
 app.register_blueprint(logic_blueprint)
 app.register_blueprint(auth_blueprint)
@@ -94,14 +94,6 @@ def query():
             result = f"<p style='color:red;'>Error: {e}</p>"
 
     return render_template('query.html', result=result, generated_sql=generated_sql)
-
-
-@app.route('/admin_tools')
-def admin_tools():
-    if session.get('role') != 'admin':
-        return redirect(url_for('dashboard'))
-    schema = get_schema(db_path)
-    return render_template('admin_tools.html', schema=schema)
 
 
 @app.route('/logout')

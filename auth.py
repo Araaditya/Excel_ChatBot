@@ -3,7 +3,8 @@ from flask import Blueprint, request, session, jsonify
 auth_blueprint = Blueprint('auth', __name__, url_prefix='/auth')
 
 USER_CREDENTIALS = {
-    "admin": {"password": "admin123", "role": "admin"}
+    "admin": {"password": "admin123", "role": "admin"},
+    "viewer": {"password": "viewer123", "role": "viewer"}
 }
 
 
